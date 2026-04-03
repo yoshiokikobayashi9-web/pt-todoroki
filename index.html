@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT. TODOROKI｜インドネシア唯一の日本式ランドスケープデザイン企業</title>
+  <meta name="description" content="PT. TODOROKIは、インドネシア・バリ島およびジャカルタを拠点とする、日本の美意識に根ざしたランドスケープデザイン企業です。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://t-todoroki.com/">
+
+  <!-- ファビコン：SVGインライン（画像ファイル不要） -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c1c1a'/><text x='50%25' y='54%25' font-family='serif' font-size='36' fill='%239b7d4a' text-anchor='middle' dominant-baseline='middle'>土</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c1c1a'/><text x='50%25' y='54%25' font-family='serif' font-size='36' fill='%239b7d4a' text-anchor='middle' dominant-baseline='middle'>土</text></svg>">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"PT. TODOROKI Bali Zouen","alternateName":"八十八騎（とどろき）","url":"https://www.pt-todoroki.com","description":"インドネシア唯一の日本式ランドスケープデザイン企業。","founder":{"@type":"Person","name":"小林 祥起","alternateName":"鐘軌","jobTitle":"代表・ランドスケープデザイナー"},"award":"IFLA Asia-Pacific Region Landscape Architecture Awards 優秀賞"}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#f7f5f0; --surface:#fff; --text:#1c1c1a; --muted:#7a7873;
+      --line:#dedad3; --accent:#5c4a2a; --gold:#9b7d4a;
+      --nav-w:240px; --ease:cubic-bezier(.4,0,.2,1);
+      --font-ja:'Shippori Mincho B1','Noto Serif JP',serif;
+      --font-en:'Cormorant Garamond',serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-ja);background:var(--bg);color:var(--text);display:flex;min-height:100vh;font-size:15px;line-height:1.9}
+
+    /* ===== SIDEBAR ===== */
+    #sidebar{
+      position:fixed;top:0;left:0;width:var(--nav-w);height:100vh;
+      background:var(--surface);border-right:1px solid var(--line);
+      display:flex;flex-direction:column;z-index:200;
+      transition:transform .4s var(--ease);
+      overflow-y:auto;
+    }
+    .logo-wrap{padding:2.4rem 2rem 1.8rem;border-bottom:1px solid var(--line);flex-shrink:0}
+    .logo-en{font-family:var(--font-en);font-size:1.05rem;font-weight:400;letter-spacing:.28em;color:var(--text);line-height:1.3}
+    .logo-ja{font-size:.72rem;letter-spacing:.2em;color:var(--gold);margin-top:.4rem}
+
+    nav{padding:1.4rem 0;flex-shrink:0}
+    nav ul{list-style:none}
+    nav ul li a{
+      display:flex;flex-direction:column;padding:.6rem 2rem;
+      font-size:.8rem;letter-spacing:.16em;color:var(--muted);
+      text-decoration:none;border-left:2px solid transparent;
+      transition:all .22s ease;gap:2px;
+    }
+    nav ul li a .nav-sub{
+      font-family:var(--font-en);font-size:.6rem;letter-spacing:.22em;
+      text-transform:uppercase;color:var(--line);transition:color .22s;
+    }
+    nav ul li a:hover,nav ul li a.active{color:var(--accent);border-left-color:var(--gold);background:rgba(155,125,74,.06)}
+    nav ul li a.active .nav-sub{color:var(--gold)}
+
+    /* 言語切替 */
+    .lang-switcher{padding:1rem 2rem 1.2rem;border-top:1px solid var(--line);flex-shrink:0}
+    .lang-label{font-family:var(--font-en);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+    .lang-btns{display:flex;gap:6px}
+    .lang-btn{
+      flex:1;border:1px solid var(--line);background:none;color:var(--muted);
+      font-family:var(--font-en);font-size:.68rem;letter-spacing:.12em;
+      padding:.32rem .3rem;cursor:pointer;transition:all .2s ease;
+      border-radius:2px;text-align:center;
+    }
+    .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+    .lang-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
+
+    /* ===== フッター（サイドバー内） ===== */
+    .sidebar-footer{
+      padding:1.2rem 2rem 1.4rem;
+      border-top:1px solid var(--line);
+      flex-shrink:0;
+      margin-top:auto;
+    }
+    .footer-section{margin-bottom:1.2rem}
+    .footer-section:last-child{margin-bottom:0}
+    .footer-heading{
+      font-family:var(--font-en);font-size:.6rem;letter-spacing:.3em;
+      text-transform:uppercase;color:var(--text);
+      margin-bottom:.55rem;font-weight:400;
+    }
+
+    /* Sitemap リンク群 */
+    .sitemap-links{display:flex;flex-direction:column;gap:2px}
+    .sitemap-links a{
+      font-family:var(--font-en);font-size:.68rem;letter-spacing:.16em;
+      text-transform:uppercase;color:var(--muted);text-decoration:none;
+      padding:.2rem 0;transition:color .2s ease;
+    }
+    .sitemap-links a:hover{color:var(--gold)}
+
+    /* Policy リンク */
+    .policy-link{
+      font-family:var(--font-en);font-size:.68rem;letter-spacing:.16em;
+      text-transform:uppercase;color:var(--muted);text-decoration:none;
+      display:block;padding:.2rem 0;transition:color .2s ease;
+    }
+    .policy-link:hover{color:var(--gold)}
+
+    /* Social アイコン */
+    .social-links{display:flex;gap:10px;align-items:center;margin-top:.3rem}
+    .social-link{
+      display:flex;align-items:center;justify-content:center;
+      width:30px;height:30px;border:1px solid var(--line);
+      border-radius:50%;color:var(--muted);text-decoration:none;
+      transition:all .2s ease;
+    }
+    .social-link:hover{border-color:var(--gold);color:var(--gold)}
+    .social-link svg{width:14px;height:14px;fill:currentColor}
+
+    .footer-copy{font-size:.62rem;color:var(--line);letter-spacing:.08em;margin-top:1rem}
+
+    /* ===== HAMBURGER ===== */
+    #hamburger{
+      display:none;position:fixed;top:1rem;left:1rem;z-index:300;
+      width:42px;height:42px;background:rgba(0,0,0,.5);
+      border:1px solid rgba(255,255,255,.3);border-radius:3px;
+      cursor:pointer;flex-direction:column;align-items:center;
+      justify-content:center;gap:6px;backdrop-filter:blur(6px);
+    }
+    #hamburger span{display:block;width:22px;height:1px;background:#fff}
+    #overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:190}
+
+    /* ===== MAIN ===== */
+    #main{margin-left:var(--nav-w);flex:1;min-height:100vh}
+    .section{display:none;min-height:100vh;animation:fadeUp .5s var(--ease) both}
+    .section.active{display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .sec-inner{max-width:920px;padding:5rem 5vw}
+    .sec-eyebrow{font-family:var(--font-en);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+    .sec-title{font-size:1.6rem;font-weight:400;letter-spacing:.07em;margin-bottom:2.8rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
+
+    /* ===== HOME ===== */
+    #home{display:none;min-height:100vh;background:#0a0a08;position:relative;overflow:hidden}
+    #home.active{display:block}
+
+    .hero-bg{position:absolute;inset:0;background:#0a0a08;}
+    .hero-bg img{position:absolute;top:50%;right:0;transform:translateY(-50%);width:50%;height:auto;object-fit:contain;opacity:1.0;display:block;}
+    .hero-bg-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .hero-bg-placeholder .ph-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;width:100%;height:100%;gap:2px;opacity:.22}
+    .hero-bg-placeholder .ph-cell{background:#2a2820}
+
+    .hero-overlay{display:none;}
+
+    /* ホームのテキストエリア — 小さめに統一 */
+    .hero-content{
+      position:relative;z-index:10;
+      display:flex;flex-direction:column;justify-content:center;
+      min-height:100vh;
+      padding:6rem 5vw 5rem;
+      max-width:580px;
+    }
+    .hero-tag{
+      font-family:var(--font-en);font-style:italic;
+      font-size:.78rem;letter-spacing:.26em;
+      color:rgba(155,125,74,.85);margin-bottom:2.2rem;
+    }
+    /* 名前ブロック（大きく・鳥毛スタイル） */
+    .hero-name-block{
+      margin-bottom:2.8rem;
+    }
+    .hero-name-ja{
+      font-family:var(--font-ja);
+      font-size:clamp(1.8rem,3.5vw,3rem);
+      font-weight:400;
+      letter-spacing:.16em;
+      color:#f0ede6;
+      line-height:1.3;
+      margin-bottom:.5rem;
+      text-shadow:0 2px 20px rgba(0,0,0,.4);
+    }
+    .hero-name-en{
+      font-family:var(--font-en);
+      font-size:.85rem;
+      font-style:italic;
+      letter-spacing:.28em;
+      color:rgba(155,125,74,.85);
+      line-height:1.4;
+    }
+    /* キャッチ＋リードを同じ小さいサイズ・同書体に統一 */
+    .hero-catch{
+      font-family:var(--font-ja);
+      font-size:.82rem;
+      font-weight:400;
+      line-height:2.2;
+      letter-spacing:.1em;
+      color:rgba(220,215,205,.82);
+      margin-bottom:1rem;
+    }
+    .hero-lead{
+      font-family:var(--font-ja);
+      font-size:.82rem;
+      color:rgba(190,185,175,.72);
+      line-height:2.2;
+      letter-spacing:.08em;
+      max-width:440px;
+      margin-bottom:2.4rem;
+    }
+    .btn-hero{
+      display:inline-block;
+      border:1px solid rgba(155,125,74,.7);color:rgba(155,125,74,.95);
+      padding:.7rem 2.2rem;font-family:var(--font-en);font-size:.72rem;
+      letter-spacing:.28em;text-decoration:none;transition:all .3s ease;
+      cursor:pointer;background:none;align-self:flex-start;
+    }
+    .btn-hero:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+    /* 右サムネイルグリッド */
+
+
+    /* ===== NEWS ===== */
+    .news-list{list-style:none}
+    .news-item{display:grid;grid-template-columns:110px 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+    .news-date{font-family:var(--font-en);font-size:.78rem;letter-spacing:.15em;color:var(--muted);white-space:nowrap}
+    .news-tag{display:inline-block;font-size:.65rem;letter-spacing:.15em;padding:.15rem .6rem;border:1px solid var(--gold);color:var(--gold);margin-right:.6rem;vertical-align:middle}
+    .news-text{font-size:.85rem;letter-spacing:.06em;line-height:1.8;color:var(--text)}
+
+    /* ===== PROFILE ===== */
+    .profile-hero{display:grid;grid-template-columns:240px 1fr;gap:3.5rem;margin-bottom:4rem}
+    .profile-photo{width:100%;aspect-ratio:3/4;background:#dedad3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .profile-photo img{width:100%;height:100%;object-fit:cover}
+    .profile-name-ja{font-size:1.45rem;font-weight:500;letter-spacing:.12em;margin-bottom:.3rem}
+    .profile-name-sub{font-family:var(--font-en);font-size:.82rem;color:var(--gold);letter-spacing:.22em}
+    .profile-title-pos{font-size:.8rem;color:var(--muted);letter-spacing:.14em;margin-top:.4rem;margin-bottom:1.5rem}
+    .profile-body{font-size:.85rem;line-height:2.1;letter-spacing:.06em}
+    .profile-body p{margin-bottom:1.1rem}
+    .profile-body strong{font-weight:500;color:var(--accent)}
+    .profile-divider{border:none;border-top:1px solid var(--line);margin:3.5rem 0 2.5rem}
+    .subsection-label{font-family:var(--font-en);font-size:.72rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+
+    .award-card{display:grid;grid-template-columns:160px 1fr;gap:1.8rem;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--line)}
+    .award-card:last-child{border-bottom:none}
+    .award-photo{width:160px;height:110px;background:#dedad3;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+    .award-photo img{width:100%;height:100%;object-fit:cover}
+    .award-badge{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+    .badge-icon{font-size:.9rem;color:var(--gold)}
+    .badge-label{font-family:var(--font-en);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+    .award-name{font-size:.9rem;font-weight:500;letter-spacing:.07em;margin-bottom:.4rem;line-height:1.5}
+    .award-desc{font-size:.82rem;line-height:1.9;color:var(--muted);letter-spacing:.05em}
+    .award-desc p{margin-bottom:.5rem}
+    .award-desc strong{color:var(--accent);font-weight:500}
+    .ph-text{color:#9a9488;font-size:.7rem;letter-spacing:.12em;text-align:center;padding:1rem;font-family:var(--font-en);line-height:1.8}
+
+    /* ===== WORKS — 文字のみリスト形式 ===== */
+    .works-category{margin-bottom:3rem}
+    .works-cat-title{
+      font-family:var(--font-en);font-size:.75rem;letter-spacing:.3em;
+      text-transform:uppercase;color:var(--gold);
+      border-bottom:1px solid var(--line);padding-bottom:.6rem;margin-bottom:1.5rem;
+    }
+    .work-list{list-style:none}
+    .work-list-item{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:1rem;
+      padding:1.1rem 0;
+      border-bottom:1px solid var(--line);
+      align-items:start;
+    }
+    .work-list-item:last-child{border-bottom:none}
+    .work-list-name{
+      font-size:.88rem;font-weight:500;letter-spacing:.07em;
+      margin-bottom:.25rem;line-height:1.5;
+    }
+    .work-list-role{
+      font-family:var(--font-en);font-size:.68rem;letter-spacing:.18em;
+      color:var(--gold);margin-bottom:.3rem;
+    }
+    .work-list-desc{font-size:.8rem;line-height:1.85;color:var(--muted);letter-spacing:.04em}
+    .work-list-desc strong{color:var(--accent);font-weight:500}
+    .work-photo-note{
+      font-family:var(--font-en);font-size:.6rem;letter-spacing:.14em;
+      color:var(--line);white-space:nowrap;padding-top:.3rem;
+      border:1px dashed var(--line);padding:.3rem .6rem;border-radius:2px;
+      align-self:flex-start;
+    }
+    /* worksの写真追加用スロット（後で使える） */
+    .work-thumb-opt{
+      width:170px;height:110px;background:#f0ede6;
+      border:1px dashed var(--line);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;overflow:hidden;
+    }
+    .work-thumb-opt img{width:100%;height:100%;object-fit:cover}
+
+    .works-note{
+      background:var(--surface);border:1px solid var(--line);border-radius:4px;
+      padding:1.2rem 1.6rem;font-size:.8rem;color:var(--muted);
+      line-height:1.9;letter-spacing:.05em;margin-bottom:2.5rem;
+    }
+    .works-note strong{color:var(--accent)}
+
+    /* ===== PRIVATE COLLECTION ===== */
+    .collection-intro{font-size:.88rem;color:var(--muted);line-height:2.1;letter-spacing:.07em;margin-bottom:3rem;max-width:600px}
+    .collection-gallery{columns:3;column-gap:10px;margin-bottom:2.5rem}
+    .gallery-item{break-inside:avoid;margin-bottom:10px;position:relative;overflow:hidden;background:#dedad3;cursor:pointer}
+    .gallery-item img{width:100%;display:block;transition:transform .4s var(--ease)}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(28,28,26,.65));color:#fff;font-size:.68rem;letter-spacing:.14em;padding:2rem .8rem .7rem;opacity:0;transition:opacity .3s;font-family:var(--font-en)}
+    .gallery-item:hover .gallery-caption{opacity:1}
+    .gallery-ph{display:flex;align-items:center;justify-content:center}
+    .photo-guide{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1.5rem 2rem;font-size:.8rem;line-height:1.95;color:var(--muted);letter-spacing:.06em}
+    .photo-guide h4{font-family:var(--font-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+    .photo-guide code{font-family:monospace;background:var(--bg);padding:.15rem .4rem;border-radius:3px;font-size:.78rem;color:var(--accent)}
+
+    /* ===== LIGHTBOX ===== */
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;align-items:center;justify-content:center;cursor:pointer}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;display:block;cursor:default}
+    #lightbox-close{position:absolute;top:1.5rem;right:2rem;color:#fff;font-size:2rem;cursor:pointer;font-family:var(--font-en);font-weight:300;line-height:1;opacity:.8}
+    #lightbox-close:hover{opacity:1}
+
+    /* ===== CONTACT ===== */
+    .contact-lead{font-size:.88rem;color:var(--muted);line-height:2;letter-spacing:.07em;margin-bottom:3rem;max-width:560px}
+    .contact-form{max-width:540px}
+    .form-group{margin-bottom:1.8rem}
+    .form-group label{display:block;font-size:.73rem;letter-spacing:.2em;color:var(--muted);margin-bottom:.5rem}
+    .form-group input,.form-group textarea,.form-group select{width:100%;border:none;border-bottom:1px solid var(--line);background:transparent;padding:.6rem 0;font-family:var(--font-ja);font-size:.85rem;color:var(--text);outline:none;transition:border-color .2s;-webkit-appearance:none}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-bottom-color:var(--gold)}
+    .form-group textarea{min-height:110px;resize:vertical}
+    .btn-submit{border:1px solid var(--accent);background:none;color:var(--accent);padding:.8rem 2.8rem;font-family:var(--font-en);font-size:.78rem;letter-spacing:.3em;cursor:pointer;transition:all .25s}
+    .btn-submit:hover{background:var(--accent);color:#fff}
+
+    /* ===== 多言語 ===== */
+    [data-lang]{display:none}
+    [data-lang].lang-active{display:block}
+    span[data-lang].lang-active{display:inline}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:900px){
+      :root{--nav-w:0px}
+      #sidebar{transform:translateX(-240px);width:240px}
+      #sidebar.open{transform:translateX(0)}
+      #hamburger{display:flex}
+      #main{margin-left:0}
+      #overlay.open{display:block}
+      .hero-thumbs,.hero-veil{display:none}
+      .hero-content{max-width:100%;padding:5rem 2rem 4rem}
+      .profile-hero{grid-template-columns:1fr}
+      .profile-photo{max-width:200px;aspect-ratio:1/1}
+      .award-card{grid-template-columns:1fr}
+      .award-photo{width:100%;height:150px}
+      .collection-gallery{columns:2}
+      .work-list-item{grid-template-columns:1fr}
+      .work-photo-note{display:none}
+    }
+    @media(max-width:480px){
+      .sec-inner{padding:4rem 1.4rem}
+      .collection-gallery{columns:1}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside id="sidebar" role="navigation" aria-label="メインナビゲーション">
+  <div class="logo-wrap">
+    <div class="logo-en">PT. TODOROKI</div>
+    <div class="logo-ja">八十八騎 ／ ランドスケープデザイン</div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#" data-section="home" class="active">
+        <span data-lang="ja" class="lang-active">Home</span>
+        <span data-lang="en">Home</span>
+        <span data-lang="id">Beranda</span>
+        <span class="nav-sub">Top</span>
+      </a></li>
+      <li><a href="#" data-section="news">
+        <span data-lang="ja" class="lang-active">News</span>
+        <span data-lang="en">News</span>
+        <span data-lang="id">Berita</span>
+        <span class="nav-sub">お知らせ</span>
+      </a></li>
+      <li><a href="#" data-section="profile">
+        <span data-lang="ja" class="lang-active">Profile</span>
+        <span data-lang="en">Profile</span>
+        <span data-lang="id">Profil</span>
+        <span class="nav-sub">プロフィール・受賞歴</span>
+      </a></li>
+      <li><a href="#" data-section="works">
+        <span data-lang="ja" class="lang-active">Works</span>
+        <span data-lang="en">Works</span>
+        <span data-lang="id">Karya</span>
+        <span class="nav-sub">施工実績</span>
+      </a></li>
+      <li><a href="#" data-section="private-collection">
+        <span data-lang="ja" class="lang-active">Private Collection</span>
+        <span data-lang="en">Private Collection</span>
+        <span data-lang="id">Koleksi Pribadi</span>
+        <span class="nav-sub">華道・プライベート</span>
+      </a></li>
+      <li><a href="#" data-section="contact">
+        <span data-lang="ja" class="lang-active">Contact</span>
+        <span data-lang="en">Contact</span>
+        <span data-lang="id">Kontak</span>
+        <span class="nav-sub">お問い合わせ</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- 言語切替 -->
+  <div class="lang-switcher">
+    <div class="lang-label">Language</div>
+    <div class="lang-btns">
+      <button class="lang-btn active" data-lang-switch="ja">日本語</button>
+      <button class="lang-btn" data-lang-switch="en">EN</button>
+      <button class="lang-btn" data-lang-switch="id">ID</button>
+    </div>
+  </div>
+
+  <!-- ===== フッター（Sitemap / Policy / Social） ===== -->
+  <div class="sidebar-footer">
+
+    <!-- Sitemap -->
+    <div class="footer-section">
+      <div class="footer-heading">Sitemap</div>
+      <div class="sitemap-links">
+        <a href="#" data-section="home">Home</a>
+        <a href="#" data-section="news">News</a>
+        <a href="#" data-section="profile">Profile</a>
+        <a href="#" data-section="works">Works</a>
+        <a href="#" data-section="private-collection">Private Collection</a>
+        <a href="#" data-section="contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- Policy -->
+    <div class="footer-section">
+      <div class="footer-heading">Policy</div>
+      <a class="policy-link" href="privacy-policy.html">Privacy Policy</a>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-section">
+      <div class="footer-heading">Social</div>
+      <div class="social-links">
+        <!-- Instagram -->
+        <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <!-- Facebook（任意） -->
+        <a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-copy">&copy; PT. TODOROKI Bali Zouen</p>
+  </div>
+</aside>
+
+<div id="overlay"></div>
+<button id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+
+<!-- ===== MAIN ===== -->
+<main id="main">
+
+  <!-- ========== HOME ========== -->
+  <section id="home" class="section active">
+    <div class="hero-bg">
+      <img src="photos/hero-bg.jpg" alt="PT. TODOROKI ランドスケープ – バリ島 茶室庭園">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-tag">Landscape Architecture &amp; Design</p>
+
+      <!-- 名前を大きく（鳥毛スタイル） -->
+      <div class="hero-name-block">
+        <p class="hero-name-ja">小林 祥起</p>
+        <p class="hero-name-en">Yoshitaka Kobayashi &nbsp;／&nbsp; 鐘軌</p>
+      </div>
+
+      <!-- キャッチ＋リードを同サイズ・同書体で統一 -->
+      <p class="hero-catch" data-lang="ja" style="display:block">
+        樹木は人よりも遥かに長く生き、過酷な試練を耐え抜いた上で、私達と触れ合っております。
+      </p>
+      <p class="hero-catch" data-lang="en">
+        Trees live far longer than humans, endure harsh trials, and only then come to touch our lives.
+      </p>
+      <p class="hero-catch" data-lang="id">
+        Pohon hidup jauh lebih lama dari manusia, menanggung ujian berat, lalu menyentuh kehidupan kita.
+      </p>
+
+      <p class="hero-lead" data-lang="ja" style="display:block">
+        特別なことを成し遂げようとせず、ただ、昨日よりもほんの少しだけ、私たちの技術を磨き、彼らに触れる。その静かな積み重ねの先にこそ、樹木が誰にも見せたことのない「最高の姿」を現してくれる瞬間があると、私たちは確信しています。
+      </p>
+      <p class="hero-lead" data-lang="en">
+        We do not strive for something extraordinary — only to refine our craft a little more than yesterday, and to touch the trees with care. In that quiet accumulation lies the moment when a tree reveals its finest form to the world.
+      </p>
+      <p class="hero-lead" data-lang="id">
+        Kami tidak berusaha melakukan sesuatu yang luar biasa — hanya menyempurnakan keahlian sedikit lebih baik dari kemarin, dan menyentuh pohon dengan penuh perhatian. Dalam akumulasi yang tenang itulah tersembunyi momen ketika pohon menampilkan sosok terbaiknya.
+      </p>
+
+      <a class="btn-hero" href="#" data-section="works">
+        <span data-lang="ja" style="display:inline">Works を見る →</span>
+        <span data-lang="en">View Works →</span>
+        <span data-lang="id">Lihat Karya →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== NEWS ========== -->
+  <section id="news" class="section">
+    <div class="sec-inner">
+      <p class="sec-eyebrow">News</p>
+      <h2 class="sec-title">
+        <span data-lang="ja" style="display:inline">お知らせ</span>
+        <span data-lang="en">News</span>
+        <span data-lang="id">Berita</span>
+      </h2>
+      <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2025.06.01</span>
+          <div>
+            <span class="news-tag">Award</span>
+            <span class="news-text" data-lang="ja" style="display:inline">IFLA Asia-Pacific Region Landscape Architecture Awards にて優秀賞を受賞いたしました。</span>
+            <span class="news-text" data-lang="en">We received the Excellence Award at the IFLA Asia-Pacific Region Landscape Architecture Awards.</span>
+            <span class="news-text" data-lang="id">Kami meraih Penghargaan Unggulan di IFLA Asia-Pacific Region Landscape Architecture Awards.</span>
+          </div>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2025.04.15</span>
+          <div>
+            <span class="news-tag">Press</span>
+            <span class="news-text" data-lang="ja" style="display:inline">専門誌『LANDSCAPE DESIGN』にAYANA Resort「Tevana」プロジェクトが掲載されました。</span>
+            <span class="news-text" data-lang="en">The AYANA Resort "Tevana" project was featured in the professional journal <em>LANDSCAPE DESIGN</em>.</span>
+            <span class="news-text" data-lang="id">Proyek AYANA Resort "Tevana" ditampilkan dalam jurnal profesional <em>LANDSCAPE DESIGN</em>.</span>
+          </div>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2024.10.01</span>
+          <div>
+            <span class="news-tag">Project</span>
+            <span class="news-text" data-lang="ja" style="display:inline">Jakarta Garden City 地区・日系メガモールのランドスケープ・マスタープランを着工しました。</span>
+            <span class="news-text" data-lang="en">Construction has begun on the landscape master plan for a Japanese mega mall in Jakarta Garden City.</span>
+            <span class="news-text" data-lang="id">Pembangunan master plan lanskap untuk mega mal Jepang di Jakarta Garden City telah dimulai.</span>
+          </div>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2024.03.20</span>
+          <div>
+            <span class="news-tag">Event</span>
+            <span class="news-text" data-lang="ja" style="display:inline">フローリストレビュー（『月刊フローリスト』主催）フラワーコンベンションにて入賞・誌面掲載。作品名：「懸り乱れ龍」</span>
+            <span class="news-text" data-lang="en">Won a prize at the Florist Review Flower Convention. Work title: "Kagari Midare Ryu."</span>
+            <span class="news-text" data-lang="id">Meraih penghargaan di Konvensi Bunga Florist Review. Judul karya: "Kagari Midare Ryu."</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== PROFILE ========== -->
+  <section id="profile" class="section">
+    <div class="sec-inner">
+      <p class="sec-eyebrow">Profile</p>
+      <h2 class="sec-title">
+        <span data-lang="ja" style="display:inline">プロフィール</span>
+        <span data-lang="en">Profile</span>
+        <span data-lang="id">Profil</span>
+      </h2>
+
+      <div class="profile-hero">
+        <figure class="profile-photo" aria-label="小林祥起の写真">
+          <!-- <img src="photos/profile.jpg" alt="小林 祥起（鐘軌）"> -->
+          <div class="ph-text">代表者<br>プロフィール写真<br><small>img で差し替え</small></div>
+        </figure>
+        <div>
+          <h2 class="profile-name-ja">小林 祥起</h2>
+          <p class="profile-name-sub">庭師名：鐘軌 &nbsp;／&nbsp; Yoshitaka Kobayashi</p>
+          <p class="profile-title-pos">PT. TODOROKI 代表</p>
+          <div class="profile-body">
+            <div data-lang="ja" style="display:block">
+              <p>1980年、京都の造園家「小林秀峰園」小林秀峰の長男として生まれる。京都庭常および「双葉造園」にて研鑽を積む傍ら、華道専慶流、茶道藤谷宗美氏に師事。京都の伝統文化を深く学ぶことで、庭師としての感性を研ぎ澄ます。</p>
+              <p>その後、世界各地の多様な景観を巡るランドスケープ研究の旅へ。気候や風土が形作る「庭」の本質を追求した末、2012年にインドネシア・バリ島へ拠点を移す。師である双葉造園への敬意を込め、その名の由来である「二つの八」を継承した「八十八騎（とどろき）/ PT. Todoroki Bali Zouen」を設立した。</p>
+              <p>現在はジャカルタにも拠点を広げ、<strong>インドネシア唯一の日本のランドスケープデザイン企業</strong>として活動。</p>
+            </div>
+            <div data-lang="en">
+              <p><strong>Born in Kyoto, 1980.</strong><br>Eldest son of landscape artist Hidehō Kobayashi of "Kobayashi Shūhōen." Trained at Kyoto Niwatsune and Futaba Zouen, while studying Kadō (Senkeiryu) and Chadō under Fujitani Sōbi.</p>
+              <p><strong>A journey of discovery leads to Bali.</strong><br>In 2012, he settled in Bali, Indonesia, founding "PT. Todoroki Bali Zouen." Now with operations also in Jakarta, PT. TODOROKI is <strong>Indonesia's only Japanese landscape design firm.</strong></p>
+            </div>
+            <div data-lang="id">
+              <p><strong>Lahir di Kyoto, 1980.</strong><br>Putra sulung seniman taman Hidehō Kobayashi. Berlatih di Kyoto Niwatsune dan Futaba Zouen, sekaligus mempelajari Kadō dan Chadō.</p>
+              <p><strong>Perjalanan penuh penemuan menuju Bali.</strong><br>Pada 2012, ia mendirikan "PT. Todoroki Bali Zouen" di Bali. Kini juga beroperasi di Jakarta sebagai <strong>satu-satunya perusahaan desain lanskap Jepang di Indonesia.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="profile-divider">
+      <p class="subsection-label">Awards &amp; Recognition</p>
+
+      <div class="award-card">
+        <div class="award-photo">
+          <!-- <img src="photos/ifla-award.jpg" alt="IFLA Tevana Garden"> -->
+          <div class="ph-text" style="font-size:.65rem">受賞写真<br><small>img で差し替え</small></div>
+        </div>
+        <div>
+          <div class="award-badge"><span class="badge-icon">★</span><span class="badge-label">International Award</span></div>
+          <h3 class="award-name">IFLA Asia-Pacific Region Landscape Architecture Awards — 優秀賞</h3>
+          <div class="award-desc">
+            <div data-lang="ja" style="display:block"><p>国際造園家連盟（IFLA）アジア太平洋地域賞 優秀賞。対象：<strong>AYANA Resort「Tevana」茶室庭園</strong>。役割：リード・リアライザー（設計意図の読解と空間具現化）</p></div>
+            <div data-lang="en"><p>Excellence Award from IFLA Asia-Pacific Region. Project: <strong>AYANA Resort "Tevana Garden" Tea Room Space.</strong> Role: Lead Realizer.</p></div>
+            <div data-lang="id"><p>Penghargaan Unggulan dari IFLA Asia-Pacific. Proyek: <strong>AYANA Resort "Tevana Garden."</strong> Peran: Lead Realizer.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="award-photo">
+          <!-- <img src="photos/ld-magazine.jpg" alt="LANDSCAPE DESIGN誌面"> -->
+          <div class="ph-text" style="font-size:.65rem">誌面写真<br><small>img で差し替え</small></div>
+        </div>
+        <div>
+          <div class="award-badge"><span class="badge-icon">◆</span><span class="badge-label">Press / Publication</span></div>
+          <h3 class="award-name">専門誌『LANDSCAPE DESIGN』掲載</h3>
+          <div class="award-desc">
+            <div data-lang="ja" style="display:block"><p>AYANA Resort「Tevana」プロジェクトが造園専門誌<strong>『LANDSCAPE DESIGN』</strong>に掲載。</p></div>
+            <div data-lang="en"><p>The "Tevana" project was published in the journal <strong><em>LANDSCAPE DESIGN</em></strong>.</p></div>
+            <div data-lang="id"><p>Proyek "Tevana" diterbitkan dalam jurnal <strong><em>LANDSCAPE DESIGN</em></strong>.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="award-photo">
+          <!-- <img src="photos/florist-award.jpg" alt="懸り乱れ龍"> -->
+          <div class="ph-text" style="font-size:.65rem">出展作品写真<br><small>img で差し替え</small></div>
+        </div>
+        <div>
+          <div class="award-badge"><span class="badge-icon">✦</span><span class="badge-label">Flower Design Award</span></div>
+          <h3 class="award-name">フローリストレビュー 入賞（『月刊フローリスト』主催）</h3>
+          <div class="award-desc">
+            <div data-lang="ja" style="display:block"><p>フラワーコンベンションにて入賞・誌面掲載。出展作品名：「<strong>懸り乱れ龍（かがりみだれりゅう）</strong>」</p></div>
+            <div data-lang="en"><p>Prize at the Florist Review Flower Convention. Work: "<strong>Kagari Midare Ryu</strong>" (Entwining Dragon of Chaos).</p></div>
+            <div data-lang="id"><p>Penghargaan di Konvensi Bunga Florist Review. Karya: "<strong>Kagari Midare Ryu.</strong>"</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WORKS — 文字のみ ========== -->
+  <section id="works" class="section">
+    <div class="sec-inner">
+      <p class="sec-eyebrow">Project Highlights</p>
+      <h2 class="sec-title">
+        <span data-lang="ja" style="display:inline">施工実績</span>
+        <span data-lang="en">Works</span>
+        <span data-lang="id">Karya</span>
+      </h2>
+
+      <!-- 写真掲載確認中のノート -->
+      <div class="works-note">
+        <span data-lang="ja" style="display:block">※ 各クライアントとの写真掲載の確認が取れ次第、写真を追加予定です。現在は文字情報のみ掲載しています。</span>
+        <span data-lang="en">* Photos will be added once confirmed with each client. Text information only at this time.</span>
+        <span data-lang="id">* Foto akan ditambahkan setelah konfirmasi dari masing-masing klien. Saat ini hanya informasi teks.</span>
+      </div>
+
+      <!-- Hospitality -->
+      <div class="works-category">
+        <h3 class="works-cat-title">Hospitality &amp; Commercial</h3>
+        <ul class="work-list">
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">AYANA Resort and Spa（Bali）</div>
+              <div class="work-list-role">Landscape Design &amp; Site Direction / Lead Realizer</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">ラウンジ「After Rock」・日本食レストラン「本膳」ランドスケープデザインおよび現場指揮。茶室庭園「Tevana」リード・リアライザーとして参画。<br>→ <strong>IFLA Asia-Pacific Awards 優秀賞受賞</strong></span>
+                <span data-lang="en">Landscape design and site direction for "After Rock" lounge and "Honzen" Japanese restaurant. Lead Realizer for tea room garden "Tevana." → <strong>IFLA Asia-Pacific Awards Excellence Award</strong></span>
+                <span data-lang="id">Desain lanskap untuk lounge "After Rock" dan restoran Jepang "Honzen." Lead Realizer untuk taman teh "Tevana." → <strong>IFLA Asia-Pacific Awards</strong></span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">Hotel Indonesia Kempinski（Jakarta）</div>
+              <div class="work-list-role">Garden Design &amp; Construction</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">日本食レストラン「OKU」：庭園設計・施工。</span>
+                <span data-lang="en">Garden design and construction for Japanese restaurant "OKU."</span>
+                <span data-lang="id">Desain dan konstruksi taman untuk restoran Jepang "OKU."</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">AXIA South Cikarang</div>
+              <div class="work-list-role">Landscape &amp; Maintenance</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">日系サービスアパートメント：造園および景観維持管理。</span>
+                <span data-lang="en">Landscaping and ongoing maintenance for a Japanese service apartment complex.</span>
+                <span data-lang="id">Lansekap dan pemeliharaan untuk kompleks apartemen servis Jepang.</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">
+                <span data-lang="ja" style="display:inline">デルタマス地区・高級レジデンス（日本人学校隣接）</span>
+                <span data-lang="en">Deltamas District — Luxury Residence</span>
+                <span data-lang="id">Kawasan Deltamas — Hunian Mewah</span>
+              </div>
+              <div class="work-list-role">Landscape Master Plan</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">日系コミュニティの中核となる、モダン・ラグジュアリーなアパートメントの景観設計。</span>
+                <span data-lang="en">Landscape design for a modern luxury apartment complex serving as the core of the Japanese community.</span>
+                <span data-lang="id">Desain lanskap untuk kompleks apartemen mewah sebagai pusat komunitas Jepang.</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">
+                <span data-lang="ja" style="display:inline">日系大型商業施設（BSD / Jakarta Garden City）</span>
+                <span data-lang="en">Japanese Mega Mall（BSD / Jakarta Garden City）</span>
+                <span data-lang="id">Mega Mal Jepang（BSD / Jakarta Garden City）</span>
+              </div>
+              <div class="work-list-role">Landscape Master Plan</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">日系メガモールのランドスケープ・マスタープラン策定。</span>
+                <span data-lang="en">Landscape master plan for a Japanese mega mall.</span>
+                <span data-lang="id">Master plan lanskap untuk mega mal Jepang.</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Industrial -->
+      <div class="works-category">
+        <h3 class="works-cat-title">Industrial &amp; Research</h3>
+        <ul class="work-list">
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">YKK Indonesia Factory</div>
+              <div class="work-list-role">Japanese Garden &amp; Landscape Management</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">敷地内日本庭園の造園および景観管理。</span>
+                <span data-lang="en">Construction and management of a Japanese garden on factory grounds.</span>
+                <span data-lang="id">Pembangunan dan pengelolaan taman Jepang di area pabrik.</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">
+                <span data-lang="ja" style="display:inline">大手日系自動車メーカー 生産拠点（デルタマス工業団地）</span>
+                <span data-lang="en">Major Japanese Automaker — Production Site (Deltamas)</span>
+                <span data-lang="id">Produsen Otomotif Jepang — Lokasi Produksi (Deltamas)</span>
+              </div>
+              <div class="work-list-role">Environmental Greening Project</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">工場敷地内における環境整備および緑化プロジェクト。</span>
+                <span data-lang="en">Environmental improvement and greening project on factory premises.</span>
+                <span data-lang="id">Proyek perbaikan lingkungan dan penghijauan di pabrik.</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">
+                <span data-lang="ja" style="display:inline">日系化学・日用品メーカー 研究施設</span>
+                <span data-lang="en">Japanese Chemical &amp; Consumer Goods — Research Facility</span>
+                <span data-lang="id">Produsen Kimia &amp; Barang Konsumen Jepang — Fasilitas Riset</span>
+              </div>
+              <div class="work-list-role">Landscape Construction &amp; Soil Research</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">ランドスケープ施工、および現地の土壌に適した肥料の研究・実施。</span>
+                <span data-lang="en">Landscape construction and research into locally adapted fertilizers.</span>
+                <span data-lang="id">Konstruksi lanskap dan penelitian pupuk yang disesuaikan dengan tanah lokal.</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+          <li class="work-list-item">
+            <div>
+              <div class="work-list-name">
+                <span data-lang="ja" style="display:inline">日系自動車関連 パートナー企業</span>
+                <span data-lang="en">Japanese Automotive Partner Companies</span>
+                <span data-lang="id">Perusahaan Mitra Otomotif Jepang</span>
+              </div>
+              <div class="work-list-role">Exterior &amp; Landscape Design</div>
+              <div class="work-list-desc">
+                <span data-lang="ja" style="display:block">施設外構および景観デザインの構築。</span>
+                <span data-lang="en">Exterior and landscape design for facilities.</span>
+                <span data-lang="id">Desain eksterior dan lanskap untuk fasilitas.</span>
+              </div>
+            </div>
+            <div class="work-photo-note">Photo: 確認中</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRIVATE COLLECTION ========== -->
+  <section id="private-collection" class="section">
+    <div class="sec-inner">
+      <p class="sec-eyebrow">Private Collection</p>
+      <h2 class="sec-title">
+        <span data-lang="ja" style="display:inline">華道・プライベートコレクション</span>
+        <span data-lang="en">Kadō &amp; Private Collection</span>
+        <span data-lang="id">Koleksi Kadō &amp; Pribadi</span>
+      </h2>
+      <div class="collection-intro">
+        <span data-lang="ja" style="display:block">
+          <strong style="font-size:.9rem;letter-spacing:.12em;color:var(--accent)">Design Philosophy</strong><br><br>
+          私のデザインの原点は、華道と茶道にあります。<br><br>
+          大切にしているのは、華道で学んだ「空間構成」の視点。まずは植物の一枝が描く線や、空間の密度をミクロの視点で徹底的に見つめる。その繊細な視点の積み重ねが、やがてダイナミックなランドスケープへと繋がっていきます。<br><br>
+          樹木の美しさには、必ず理由があります。自然が描くかたちの背景にある、必然の「理由」を見つめること。植物が生きるために選んだ無駄のないふるまいを、私たちは設計の力に変えていく。それが、私たちのこだわりです。
+        </span>
+        <span data-lang="en">
+          <strong style="font-size:.9rem;letter-spacing:.12em;color:var(--accent)">Design Philosophy</strong><br><br>
+          The origin of my design lies in Kadō (flower arrangement) and Chadō (tea ceremony).<br><br>
+          What I value most is the perspective of "spatial composition" learned through Kadō — first scrutinizing, at a microscopic level, the lines drawn by a single branch and the density of space. That accumulation of delicate perspective eventually connects to a dynamic landscape.<br><br>
+          There is always a reason behind the beauty of trees. To look at the inevitable "reason" behind the forms drawn by nature, and to transform the purposeful behavior that plants choose in order to live into the power of design — that is our commitment.
+        </span>
+        <span data-lang="id">
+          <strong style="font-size:.9rem;letter-spacing:.12em;color:var(--accent)">Design Philosophy</strong><br><br>
+          Asal-usul desain saya terletak pada Kadō (merangkai bunga) dan Chadō (upacara teh).<br><br>
+          Yang paling saya hargai adalah perspektif "komposisi ruang" yang dipelajari melalui Kadō — pertama-tama mengamati secara mendalam, dari perspektif mikro, garis yang digambar oleh satu tangkai tanaman dan kepadatan ruang. Akumulasi perspektif yang halus itu akhirnya terhubung ke lanskap yang dinamis.<br><br>
+          Selalu ada alasan di balik keindahan pohon. Melihat "alasan" yang tak terelakkan di balik bentuk yang digambar oleh alam, dan mengubah perilaku tanpa pemborosan yang dipilih tanaman untuk hidup menjadi kekuatan desain — itulah komitmen kami.
+        </span>
+      </div>
+
+      <div class="collection-gallery" id="gallery" role="list">
+        <!--
+          写真の追加：各枠に <img src="photos/kado-XX.jpg" alt="作品名"> を追加
+          枠を増やす場合は <div class="gallery-item"> を複製
+          クリックで拡大表示
+        -->
+        <div class="gallery-item" role="listitem" data-caption="華道作品 01">
+          <div class="gallery-ph" style="height:240px"><div class="ph-text">Photo 01<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 01</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="華道作品 02">
+          <div class="gallery-ph" style="height:320px"><div class="ph-text">Photo 02<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 02</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="懸り乱れ龍">
+          <div class="gallery-ph" style="height:180px"><div class="ph-text">Photo 03<br>懸り乱れ龍<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">懸り乱れ龍（かがりみだれりゅう）</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="華道作品 04">
+          <div class="gallery-ph" style="height:280px"><div class="ph-text">Photo 04<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 04</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="華道作品 05">
+          <div class="gallery-ph" style="height:210px"><div class="ph-text">Photo 05<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 05</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="華道作品 06">
+          <div class="gallery-ph" style="height:360px"><div class="ph-text">Photo 06<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 06</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="華道作品 07">
+          <div class="gallery-ph" style="height:200px"><div class="ph-text">Photo 07<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 07</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="華道作品 08">
+          <div class="gallery-ph" style="height:290px"><div class="ph-text">Photo 08<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 08</div>
+        </div>
+        <div class="gallery-item" role="listitem" data-caption="華道作品 09">
+          <div class="gallery-ph" style="height:230px"><div class="ph-text">Photo 09<br><small>img で配置</small></div></div>
+          <div class="gallery-caption">華道作品 09</div>
+        </div>
+      </div>
+
+      <div class="photo-guide">
+        <h4>How to Add Photos</h4>
+        <p>各枠のコメント（<code>&lt;!-- ... --&gt;</code>）を外し <code>&lt;img src="photos/ファイル名.jpg" alt="作品名"&gt;</code> を追加するだけです。枠を増やしたい場合は <code>&lt;div class="gallery-item"&gt;</code> を複製してください。写真クリックで拡大表示されます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section">
+    <div class="sec-inner">
+      <p class="sec-eyebrow">Contact</p>
+      <h2 class="sec-title">
+        <span data-lang="ja" style="display:inline">お問い合わせ</span>
+        <span data-lang="en">Contact</span>
+        <span data-lang="id">Kontak</span>
+      </h2>
+      <p class="contact-lead">
+        <span data-lang="ja" style="display:block">プロジェクトのご相談、お見積もり、取材・掲載のご依頼など、お気軽にご連絡ください。インドネシア（バリ島・ジャカルタ）国内のみならず、日本および海外からのご依頼も歓迎いたします。</span>
+        <span data-lang="en">We welcome inquiries about project consultations, estimates, and media coverage — from Indonesia, Japan, and beyond.</span>
+        <span data-lang="id">Kami menerima pertanyaan mengenai konsultasi proyek, estimasi, dan peliputan media — dari Indonesia, Jepang, dan seluruh dunia.</span>
+      </p>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="_to" value="pt.todoroki.landscape.japan@gmail.com">
+        <p style="display:none"><input name="bot-field"></p>
+        <div class="form-group">
+          <label for="fname">
+            <span data-lang="ja" style="display:inline">お名前</span>
+            <span data-lang="en">Name</span>
+            <span data-lang="id">Nama</span>
+            <span style="color:var(--gold)"> *</span>
+          </label>
+          <input type="text" id="fname" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="org">
+            <span data-lang="ja" style="display:inline">会社名・組織名</span>
+            <span data-lang="en">Organization</span>
+            <span data-lang="id">Organisasi</span>
+          </label>
+          <input type="text" id="org" name="organization">
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span style="color:var(--gold)">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">
+            <span data-lang="ja" style="display:inline">メッセージ</span>
+            <span data-lang="en">Message</span>
+            <span data-lang="id">Pesan</span>
+            <span style="color:var(--gold)"> *</span>
+          </label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          <span data-lang="ja" style="display:inline">送信する →</span>
+          <span data-lang="en">Send Message →</span>
+          <span data-lang="id">Kirim Pesan →</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<div id="lightbox" role="dialog" aria-modal="true">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+// ナビゲーション
+const navLinks = document.querySelectorAll('[data-section]');
+const sections = document.querySelectorAll('.section');
+
+function showSection(id) {
+  sections.forEach(s => s.classList.remove('active'));
+  navLinks.forEach(a => a.classList.remove('active'));
+  const t = document.getElementById(id);
+  if (t) t.classList.add('active');
+  navLinks.forEach(a => { if (a.dataset.section === id) a.classList.add('active'); });
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  history.pushState(null, '', '#' + id);
+}
+
+navLinks.forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    showSection(a.dataset.section);
+    closeSidebar();
+  });
+});
+
+const hash = location.hash.slice(1);
+if (hash && document.getElementById(hash)) showSection(hash);
+
+// ハンバーガー
+const hamburger = document.getElementById('hamburger');
+const sidebar   = document.getElementById('sidebar');
+const overlay   = document.getElementById('overlay');
+function openSidebar()  { sidebar.classList.add('open'); overlay.classList.add('open'); }
+function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('open'); }
+hamburger.addEventListener('click', () => sidebar.classList.contains('open') ? closeSidebar() : openSidebar());
+overlay.addEventListener('click', closeSidebar);
+
+// 言語切替
+function switchLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.remove('lang-active');
+    const tag = el.tagName.toLowerCase();
+    el.style.display = 'none';
+  });
+  document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => {
+    el.classList.add('lang-active');
+    const tag = el.tagName.toLowerCase();
+    if (tag === 'span') el.style.display = 'inline';
+    else if (tag === 'li') el.style.display = 'list-item';
+    else el.style.display = 'block';
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.langSwitch === lang);
+  });
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => switchLang(btn.dataset.langSwitch));
+});
+switchLang('ja');
+
+// ライトボックス
+const lightbox    = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lbClose     = document.getElementById('lightbox-close');
+
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    if (!img) return;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightboxImg.src = '';
+  document.body.style.overflow = '';
+}
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
