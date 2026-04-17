@@ -7,12 +7,8 @@
   <meta name="description" content="PT. TODOROKIは、インドネシア・バリ島およびジャカルタを拠点とする、日本の美意識に根ざしたランドスケープデザイン企業です。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://t-todoroki.com/">
-
-  <!-- ファビコン：SVGインライン（画像ファイル不要） -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c1c1a'/><text x='50%25' y='54%25' font-family='serif' font-size='36' fill='%239b7d4a' text-anchor='middle' dominant-baseline='middle'>土</text></svg>">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c1c1a'/><text x='50%25' y='54%25' font-family='serif' font-size='36' fill='%239b7d4a' text-anchor='middle' dominant-baseline='middle'>土</text></svg>">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"PT. TODOROKI Bali Zouen","alternateName":"八十八騎（とどろき）","url":"https://www.pt-todoroki.com","description":"インドネシア唯一の日本式ランドスケープデザイン企業。","founder":{"@type":"Person","name":"小林 祥起","alternateName":"鐘軌","jobTitle":"代表・ランドスケープデザイナー"},"award":"IFLA Asia-Pacific Region Landscape Architecture Awards 優秀賞"}
+  {"@context":"https://schema.org","@type":"Organization","name":"PT. TODOROKI Bali Zouen","alternateName":"八十八騎（とどろき）","url":"https://t-todoroki.com","description":"インドネシア唯一の日本式ランドスケープデザイン企業。","founder":{"@type":"Person","name":"小林 祥起","alternateName":"鐘軌","jobTitle":"代表・ランドスケープデザイナー"},"award":"IFLA Asia-Pacific Region Landscape Architecture Awards 優秀賞","email":"pt.todoroki.landscape.japan@gmail.com"}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,13 +135,18 @@
     #home{display:none;min-height:100vh;background:#0a0a08;position:relative;overflow:hidden}
     #home.active{display:block}
 
-    .hero-bg{position:absolute;inset:0;background:#0a0a08;}
-    .hero-bg img{position:absolute;top:50%;right:0;transform:translateY(-50%);width:50%;height:auto;object-fit:contain;opacity:1.0;display:block;}
+    .hero-bg{position:absolute;inset:0;background:#0a0a08;display:flex;align-items:center;justify-content:center}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.55;display:block}
     .hero-bg-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
     .hero-bg-placeholder .ph-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;width:100%;height:100%;gap:2px;opacity:.22}
     .hero-bg-placeholder .ph-cell{background:#2a2820}
 
-    .hero-overlay{display:none;}
+    .hero-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(to right,rgba(10,10,8,.82) 0%,rgba(10,10,8,.3) 55%,rgba(10,10,8,.1) 100%),
+                 linear-gradient(to top,rgba(10,10,8,.7) 0%,transparent 50%);
+      pointer-events:none;
+    }
 
     /* ホームのテキストエリア — 小さめに統一 */
     .hero-content{
@@ -211,7 +212,22 @@
     .btn-hero:hover{background:var(--gold);border-color:var(--gold);color:#fff}
 
     /* 右サムネイルグリッド */
-
+    .hero-thumbs{
+      position:absolute;right:0;bottom:0;top:0;width:40%;
+      display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
+      gap:2px;z-index:5;
+    }
+    .hero-thumb{
+      background:#1a1a16;overflow:hidden;position:relative;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .hero-thumb img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:opacity .4s}
+    .hero-thumb:hover img{opacity:1}
+    .hero-thumb .thumb-ph{color:#3a3830;font-family:var(--font-en);font-size:.65rem;letter-spacing:.14em;text-align:center;padding:.8rem}
+    .hero-thumb .thumb-label{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.5);color:rgba(255,255,255,.75);font-family:var(--font-en);font-size:.6rem;letter-spacing:.12em;padding:.35rem .6rem;opacity:0;transition:.3s}
+    .hero-thumb:hover .thumb-label{opacity:1}
+    .hero-line{position:absolute;left:calc(3vw);top:0;bottom:0;width:1px;background:rgba(155,125,74,.18);pointer-events:none;z-index:8}
+    .hero-veil{position:absolute;right:40%;top:0;bottom:0;width:100px;background:linear-gradient(to right,rgba(10,10,8,1),rgba(10,10,8,0));pointer-events:none;z-index:6}
 
     /* ===== NEWS ===== */
     .news-list{list-style:none}
@@ -469,9 +485,43 @@
   <!-- ========== HOME ========== -->
   <section id="home" class="section active">
     <div class="hero-bg">
-      <img src="photos/hero-bg.jpg" alt="PT. TODOROKI ランドスケープ – バリ島 茶室庭園">
+      <!--
+        大きな背景写真を1枚使う場合：
+        <img src="photos/hero-bg.jpg" alt="PT. TODOROKI landscape">
+      -->
+      <div class="hero-bg-placeholder">
+        <div class="ph-grid">
+          <div class="ph-cell"></div><div class="ph-cell"></div>
+          <div class="ph-cell"></div><div class="ph-cell"></div>
+        </div>
+      </div>
     </div>
     <div class="hero-overlay"></div>
+    <div class="hero-line"></div>
+
+    <div class="hero-thumbs">
+      <div class="hero-thumb">
+        <!-- <img src="photos/thumb-01.jpg" alt="AYANA Resort"> -->
+        <div class="thumb-ph">Photo 01</div>
+        <div class="thumb-label">AYANA Resort – Tevana Garden</div>
+      </div>
+      <div class="hero-thumb">
+        <!-- <img src="photos/thumb-02.jpg" alt="OKU Kempinski"> -->
+        <div class="thumb-ph">Photo 02</div>
+        <div class="thumb-label">OKU – Kempinski Jakarta</div>
+      </div>
+      <div class="hero-thumb">
+        <!-- <img src="photos/thumb-03.jpg" alt="YKK Indonesia"> -->
+        <div class="thumb-ph">Photo 03</div>
+        <div class="thumb-label">YKK Indonesia Garden</div>
+      </div>
+      <div class="hero-thumb">
+        <!-- <img src="photos/thumb-04.jpg" alt="Landscape Detail"> -->
+        <div class="thumb-ph">Photo 04</div>
+        <div class="thumb-label">Landscape Detail</div>
+      </div>
+    </div>
+    <div class="hero-veil"></div>
 
     <div class="hero-content">
       <p class="hero-tag">Landscape Architecture &amp; Design</p>
@@ -822,24 +872,9 @@
         <span data-lang="id">Koleksi Kadō &amp; Pribadi</span>
       </h2>
       <div class="collection-intro">
-        <span data-lang="ja" style="display:block">
-          <strong style="font-size:.9rem;letter-spacing:.12em;color:var(--accent)">Design Philosophy</strong><br><br>
-          私のデザインの原点は、華道と茶道にあります。<br><br>
-          大切にしているのは、華道で学んだ「空間構成」の視点。まずは植物の一枝が描く線や、空間の密度をミクロの視点で徹底的に見つめる。その繊細な視点の積み重ねが、やがてダイナミックなランドスケープへと繋がっていきます。<br><br>
-          樹木の美しさには、必ず理由があります。自然が描くかたちの背景にある、必然の「理由」を見つめること。植物が生きるために選んだ無駄のないふるまいを、私たちは設計の力に変えていく。それが、私たちのこだわりです。
-        </span>
-        <span data-lang="en">
-          <strong style="font-size:.9rem;letter-spacing:.12em;color:var(--accent)">Design Philosophy</strong><br><br>
-          The origin of my design lies in Kadō (flower arrangement) and Chadō (tea ceremony).<br><br>
-          What I value most is the perspective of "spatial composition" learned through Kadō — first scrutinizing, at a microscopic level, the lines drawn by a single branch and the density of space. That accumulation of delicate perspective eventually connects to a dynamic landscape.<br><br>
-          There is always a reason behind the beauty of trees. To look at the inevitable "reason" behind the forms drawn by nature, and to transform the purposeful behavior that plants choose in order to live into the power of design — that is our commitment.
-        </span>
-        <span data-lang="id">
-          <strong style="font-size:.9rem;letter-spacing:.12em;color:var(--accent)">Design Philosophy</strong><br><br>
-          Asal-usul desain saya terletak pada Kadō (merangkai bunga) dan Chadō (upacara teh).<br><br>
-          Yang paling saya hargai adalah perspektif "komposisi ruang" yang dipelajari melalui Kadō — pertama-tama mengamati secara mendalam, dari perspektif mikro, garis yang digambar oleh satu tangkai tanaman dan kepadatan ruang. Akumulasi perspektif yang halus itu akhirnya terhubung ke lanskap yang dinamis.<br><br>
-          Selalu ada alasan di balik keindahan pohon. Melihat "alasan" yang tak terelakkan di balik bentuk yang digambar oleh alam, dan mengubah perilaku tanpa pemborosan yang dipilih tanaman untuk hidup menjadi kekuatan desain — itulah komitmen kami.
-        </span>
+        <span data-lang="ja" style="display:block">ランドスケープデザインの根幹をなす「華道専慶流」の作品と、プライベートな創作の記録を収めたコレクションです。空間に命を吹き込む一枝の線と、その背後にある沈黙——。庭師・鐘軌の原点がここにあります。</span>
+        <span data-lang="en">A collection of works from "Kadō Senkei-ryū" — the foundation of our landscape design philosophy — alongside records of private creative expression.</span>
+        <span data-lang="id">Koleksi karya dari "Kadō Senkei-ryū" — fondasi filosofi desain lanskap kami — bersama rekaman ekspresi kreatif pribadi.</span>
       </div>
 
       <div class="collection-gallery" id="gallery" role="list">
@@ -907,10 +942,7 @@
         <span data-lang="en">We welcome inquiries about project consultations, estimates, and media coverage — from Indonesia, Japan, and beyond.</span>
         <span data-lang="id">Kami menerima pertanyaan mengenai konsultasi proyek, estimasi, dan peliputan media — dari Indonesia, Jepang, dan seluruh dunia.</span>
       </p>
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <input type="hidden" name="_to" value="pt.todoroki.landscape.japan@gmail.com">
-        <p style="display:none"><input name="bot-field"></p>
+      <form class="contact-form" id="contactForm" onsubmit="return sendMailto(event)" novalidate>
         <div class="form-group">
           <label for="fname">
             <span data-lang="ja" style="display:inline">お名前</span>
@@ -946,7 +978,55 @@
           <span data-lang="en">Send Message →</span>
           <span data-lang="id">Kirim Pesan →</span>
         </button>
+        <p style="font-size:.72rem;color:var(--muted);margin-top:1.2rem;letter-spacing:.05em;line-height:1.8">
+          <span data-lang="ja" style="display:inline">※ 送信ボタンを押すとご利用のメールアプリが起動します。うまく動作しない場合は、<a href="mailto:pt.todoroki.landscape.japan@gmail.com" style="color:var(--gold)">pt.todoroki.landscape.japan@gmail.com</a> まで直接ご連絡ください。</span>
+          <span data-lang="en">* Clicking the button will open your email app. If it doesn't work, please contact us directly at <a href="mailto:pt.todoroki.landscape.japan@gmail.com" style="color:var(--gold)">pt.todoroki.landscape.japan@gmail.com</a>.</span>
+          <span data-lang="id">* Tombol kirim akan membuka aplikasi email Anda. Jika tidak berfungsi, silakan hubungi kami langsung di <a href="mailto:pt.todoroki.landscape.japan@gmail.com" style="color:var(--gold)">pt.todoroki.landscape.japan@gmail.com</a>.</span>
+        </p>
       </form>
+      <script>
+        function sendMailto(e){
+          e.preventDefault();
+          var name = document.getElementById('fname').value.trim();
+          var org = document.getElementById('org').value.trim();
+          var email = document.getElementById('email').value.trim();
+          var msg = document.getElementById('message').value.trim();
+          if(!name || !email || !msg){
+            alert('必須項目をご入力ください / Please fill in required fields / Mohon isi kolom yang wajib diisi');
+            return false;
+          }
+          // 現在の言語を判定
+          var lang = document.documentElement.lang || 'ja';
+          var subject, body;
+          if(lang === 'en'){
+            subject = '[Website Inquiry] from ' + name;
+            body = 'Name: ' + name + '\n'
+                 + 'Organization: ' + (org || '-') + '\n'
+                 + 'Email: ' + email + '\n\n'
+                 + '--- Message ---\n' + msg + '\n\n'
+                 + '(Sent via t-todoroki.com contact form)';
+          } else if(lang === 'id'){
+            subject = '[Pertanyaan Website] dari ' + name;
+            body = 'Nama: ' + name + '\n'
+                 + 'Organisasi: ' + (org || '-') + '\n'
+                 + 'Email: ' + email + '\n\n'
+                 + '--- Pesan ---\n' + msg + '\n\n'
+                 + '(Dikirim dari formulir kontak t-todoroki.com)';
+          } else {
+            subject = '【ウェブサイトお問い合わせ】' + name + ' 様';
+            body = 'お名前： ' + name + '\n'
+                 + '会社名・組織名： ' + (org || '-') + '\n'
+                 + 'メールアドレス： ' + email + '\n\n'
+                 + '--- お問い合わせ内容 ---\n' + msg + '\n\n'
+                 + '（t-todoroki.com お問い合わせフォームより送信）';
+          }
+          var mailtoLink = 'mailto:pt.todoroki.landscape.japan@gmail.com'
+                         + '?subject=' + encodeURIComponent(subject)
+                         + '&body=' + encodeURIComponent(body);
+          window.location.href = mailtoLink;
+          return false;
+        }
+      </script>
     </div>
   </section>
 
