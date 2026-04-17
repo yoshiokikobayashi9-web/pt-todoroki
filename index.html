@@ -942,7 +942,7 @@
         <span data-lang="en">We welcome inquiries about project consultations, estimates, and media coverage — from Indonesia, Japan, and beyond.</span>
         <span data-lang="id">Kami menerima pertanyaan mengenai konsultasi proyek, estimasi, dan peliputan media — dari Indonesia, Jepang, dan seluruh dunia.</span>
       </p>
-      <form class="contact-form" id="contactForm" onsubmit="return sendMailto(event)" novalidate>
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzdyrbbg" method="POST" novalidate>
         <div class="form-group">
           <label for="fname">
             <span data-lang="ja" style="display:inline">お名前</span>
@@ -973,59 +973,106 @@
           </label>
           <textarea id="message" name="message" required></textarea>
         </div>
-        <button type="submit" class="btn-submit">
+        <!-- 件名をFormspreeで設定(受信メールの件名) -->
+        <input type="hidden" name="_subject" value="【t-todoroki.com】新しいお問い合わせ">
+        <!-- 返信先を自動設定 -->
+        <input type="hidden" name="_replyto" value="">
+        <button type="submit" class="btn-submit" id="submitBtn">
           <span data-lang="ja" style="display:inline">送信する →</span>
           <span data-lang="en">Send Message →</span>
           <span data-lang="id">Kirim Pesan →</span>
         </button>
-        <p style="font-size:.72rem;color:var(--muted);margin-top:1.2rem;letter-spacing:.05em;line-height:1.8">
-          <span data-lang="ja" style="display:inline">※ 送信ボタンを押すとご利用のメールアプリが起動します。うまく動作しない場合は、<a href="mailto:pt.todoroki.landscape.japan@gmail.com" style="color:var(--gold)">pt.todoroki.landscape.japan@gmail.com</a> まで直接ご連絡ください。</span>
-          <span data-lang="en">* Clicking the button will open your email app. If it doesn't work, please contact us directly at <a href="mailto:pt.todoroki.landscape.japan@gmail.com" style="color:var(--gold)">pt.todoroki.landscape.japan@gmail.com</a>.</span>
-          <span data-lang="id">* Tombol kirim akan membuka aplikasi email Anda. Jika tidak berfungsi, silakan hubungi kami langsung di <a href="mailto:pt.todoroki.landscape.japan@gmail.com" style="color:var(--gold)">pt.todoroki.landscape.japan@gmail.com</a>.</span>
-        </p>
+        <!-- 送信結果メッセージ表示エリア -->
+        <div id="formResult" style="margin-top:1.5rem;padding:1rem;border-radius:4px;display:none;font-size:.85rem;letter-spacing:.05em;line-height:1.8"></div>
       </form>
       <script>
-        function sendMailto(e){
-          e.preventDefault();
-          var name = document.getElementById('fname').value.trim();
-          var org = document.getElementById('org').value.trim();
-          var email = document.getElementById('email').value.trim();
-          var msg = document.getElementById('message').value.trim();
-          if(!name || !email || !msg){
-            alert('必須項目をご入力ください / Please fill in required fields / Mohon isi kolom yang wajib diisi');
-            return false;
-          }
-          // 現在の言語を判定
-          var lang = document.documentElement.lang || 'ja';
-          var subject, body;
-          if(lang === 'en'){
-            subject = '[Website Inquiry] from ' + name;
-            body = 'Name: ' + name + '\n'
-                 + 'Organization: ' + (org || '-') + '\n'
-                 + 'Email: ' + email + '\n\n'
-                 + '--- Message ---\n' + msg + '\n\n'
-                 + '(Sent via t-todoroki.com contact form)';
-          } else if(lang === 'id'){
-            subject = '[Pertanyaan Website] dari ' + name;
-            body = 'Nama: ' + name + '\n'
-                 + 'Organisasi: ' + (org || '-') + '\n'
-                 + 'Email: ' + email + '\n\n'
-                 + '--- Pesan ---\n' + msg + '\n\n'
-                 + '(Dikirim dari formulir kontak t-todoroki.com)';
-          } else {
-            subject = '【ウェブサイトお問い合わせ】' + name + ' 様';
-            body = 'お名前： ' + name + '\n'
-                 + '会社名・組織名： ' + (org || '-') + '\n'
-                 + 'メールアドレス： ' + email + '\n\n'
-                 + '--- お問い合わせ内容 ---\n' + msg + '\n\n'
-                 + '（t-todoroki.com お問い合わせフォームより送信）';
-          }
-          var mailtoLink = 'mailto:pt.todoroki.landscape.japan@gmail.com'
-                         + '?subject=' + encodeURIComponent(subject)
-                         + '&body=' + encodeURIComponent(body);
-          window.location.href = mailtoLink;
-          return false;
-        }
+        (function(){
+          var form = document.getElementById('contactForm');
+          var result = document.getElementById('formResult');
+          var submitBtn = document.getElementById('submitBtn');
+
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            var name = document.getElementById('fname').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var msg = document.getElementById('message').value.trim();
+            var lang = document.documentElement.lang || 'ja';
+
+            // 必須チェック
+            if(!name || !email || !msg){
+              var warnMsg = {
+                ja: '※ 必須項目(お名前・Email・メッセージ)をご入力ください。',
+                en: '* Please fill in all required fields (Name, Email, Message).',
+                id: '* Mohon isi semua kolom yang wajib (Nama, Email, Pesan).'
+              };
+              result.style.display = 'block';
+              result.style.background = 'rgba(200,80,80,0.15)';
+              result.style.color = '#e88';
+              result.style.border = '1px solid rgba(200,80,80,0.4)';
+              result.textContent = warnMsg[lang] || warnMsg.ja;
+              return;
+            }
+
+            // 返信先メールアドレスを設定
+            form.querySelector('input[name="_replyto"]').value = email;
+
+            // 送信中メッセージ
+            var sendingMsg = {
+              ja: '送信中...',
+              en: 'Sending...',
+              id: 'Mengirim...'
+            };
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.6';
+            result.style.display = 'block';
+            result.style.background = 'rgba(180,160,100,0.1)';
+            result.style.color = 'var(--muted)';
+            result.style.border = '1px solid rgba(180,160,100,0.3)';
+            result.textContent = sendingMsg[lang] || sendingMsg.ja;
+
+            // Formspreeへ非同期送信
+            var data = new FormData(form);
+            fetch(form.action, {
+              method: 'POST',
+              body: data,
+              headers: { 'Accept': 'application/json' }
+            }).then(function(response){
+              if(response.ok){
+                var successMsg = {
+                  ja: '✓ お問い合わせを送信いたしました。ご連絡ありがとうございます。追ってご返信いたします。',
+                  en: '✓ Thank you for your message. We have received your inquiry and will respond shortly.',
+                  id: '✓ Terima kasih atas pesan Anda. Kami telah menerima pertanyaan Anda dan akan segera membalas.'
+                };
+                result.style.background = 'rgba(180,160,100,0.15)';
+                result.style.color = 'var(--gold)';
+                result.style.border = '1px solid rgba(180,160,100,0.4)';
+                result.textContent = successMsg[lang] || successMsg.ja;
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+              } else {
+                response.json().then(function(data){
+                  throw new Error(data.error || 'Submit failed');
+                }).catch(function(){
+                  throw new Error('Submit failed');
+                });
+              }
+            }).catch(function(err){
+              var errorMsg = {
+                ja: '送信に失敗しました。お手数ですが、pt.todoroki.landscape.japan@gmail.com まで直接ご連絡ください。',
+                en: 'Failed to send. Please contact us directly at pt.todoroki.landscape.japan@gmail.com.',
+                id: 'Gagal mengirim. Silakan hubungi kami langsung di pt.todoroki.landscape.japan@gmail.com.'
+              };
+              result.style.background = 'rgba(200,80,80,0.15)';
+              result.style.color = '#e88';
+              result.style.border = '1px solid rgba(200,80,80,0.4)';
+              result.textContent = errorMsg[lang] || errorMsg.ja;
+              submitBtn.disabled = false;
+              submitBtn.style.opacity = '1';
+            });
+          });
+        })();
       </script>
     </div>
   </section>
